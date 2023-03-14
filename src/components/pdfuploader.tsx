@@ -4,8 +4,8 @@ import { FileUploader } from "react-drag-drop-files";
 import { Card } from "../ui/card";
 import UploaderBox from "./uploader-box";
 
-// const FLASK_API_BASE = "https://pdfsummarizer-backend.herokuapp.com";
-const FLASK_API_BASE = "http://127.0.0.1:5000";
+const FLASK_API_BASE = "https://pdfsummarizer-backend.herokuapp.com";
+// const FLASK_API_BASE = "http://127.0.0.1:5000";
 
 const fileTypes = ["PDF"];
 
