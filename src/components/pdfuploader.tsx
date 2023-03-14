@@ -34,6 +34,9 @@ const PDFUPloader = (props: ComponentProps) => {
         setLoading(false);
       })
       .catch((error: Error) => {
+        setIsFileUploaded(false);
+        setLoading(false);
+        alert("Sorry, something went wrong!");
         console.log(error);
       });
   };
@@ -53,15 +56,13 @@ const PDFUPloader = (props: ComponentProps) => {
     <>
       <Card className="mb-5">
         <div className="flex flex-row justify-center">
-          <div className="p-10">
-            <FileUploader
-              handleChange={handleUploadFile}
-              name="file"
-              types={fileTypes}
-            >
-              <UploaderBox />
-            </FileUploader>
-          </div>
+          <FileUploader
+            handleChange={handleUploadFile}
+            name="file"
+            types={fileTypes}
+          >
+            <UploaderBox />
+          </FileUploader>
         </div>
       </Card>
     </>

@@ -10,19 +10,21 @@ const Home: NextPage = () => {
   const [summary, setSummary] = useState("");
 
   return (
-    <div className="flex min-h-screen flex-col p-10">
-      <div className="mb-10 flex justify-center">
-        <h1 className="text-4xl font-semibold">PDF SUMMARIZER</h1>
+    <div className="min-w-screen flex flex-row overflow-x-hidden p-5 md:p-10">
+      <div className="flex min-h-screen flex-1 flex-col">
+        <div className="mb-10 flex justify-center">
+          <h1 className="text-2xl font-semibold md:text-4xl">PDF SUMMARIZER</h1>
+        </div>
+        <div className="flex-1">
+          <PDFUPloader
+            setSummary={setSummary}
+            setIsFileUploaded={setIsFileUploaded}
+            setLoading={setLoading}
+          />
+          {isFileUploaded && <SummaryBox summary={summary} loading={loading} />}
+        </div>
+        <SiteFooter />
       </div>
-      <div className="flex-1">
-        <PDFUPloader
-          setSummary={setSummary}
-          setIsFileUploaded={setIsFileUploaded}
-          setLoading={setLoading}
-        />
-        {isFileUploaded && <SummaryBox summary={summary} loading={loading} />}
-      </div>
-      <SiteFooter />
     </div>
   );
 };
