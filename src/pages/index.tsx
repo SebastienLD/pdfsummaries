@@ -3,6 +3,7 @@ import { useState } from "react";
 import { SiteFooter } from "~/components/site-footer";
 import PDFUPloader from "~/components/pdfuploader";
 import SummaryBox from "~/components/summary-box";
+import Head from "next/head";
 
 const Home: NextPage = () => {
   const [isFileUploaded, setIsFileUploaded] = useState(false);
@@ -11,6 +12,14 @@ const Home: NextPage = () => {
 
   return (
     <div className="min-w-screen flex flex-row overflow-x-hidden p-5 md:p-10">
+      <Head>
+        <title>Sebastien Lajeunesse-deGroot</title>
+        <meta
+          property="og:title"
+          content="Sebastien Lajeunesse-deGroot"
+          key="title"
+        />
+      </Head>
       <div className="flex min-h-screen flex-1 flex-col">
         <div className="mb-10 flex justify-center">
           <h1 className="text-2xl font-semibold md:text-4xl">PDF SUMMARIZER</h1>
